@@ -15,44 +15,45 @@ variable "environment" {
 }
 
 # # vpc variables
-# variable "vpc_cidr" {
-#   description = "vpc cidr block"
-#   type        = string
-# }
+ variable "vpc_cidr" {
+  description = "CIDR block for the VPC"
+  type        = string
+}
 
-# variable "public_subnet_az1_cidr" {
-#   description = "public subnet az1 cidr block"
-#   type        = string
-# }
 
-# variable "public_subnet_az2_cidr" {
-#   description = "public subnet az2 cidr block"
-#   type        = string
-# }
+ variable "public_subnet_az1_cidr" {
+   description = "public subnet az1 CIDR block"
+   type        = string
+ }
 
-# variable "private_app_subnet_az1_cidr" {
-#   description = "private app subnet az1 cidr block"
-#   type        = string
-# }
+ variable "public_subnet_az2_cidr" {
+   description = "public subnet az2 cidr block"
+   type        = string
+ }
 
-# variable "private_app_subnet_az2_cidr" {
-#   description = "private app subnet az2 cidr block"
-#   type        = string
-# }
+ variable "private_app_subnet_az1_cidr" {
+   description = "private app subnet az1 cidr block"
+   type        = string
+ }
 
-# variable "private_data_subnet_az1_cidr" {
-#   description = "private data subnet az1 cidr block"
-#   type        = string
-# }
+ variable "private_app_subnet_az2_cidr" {
+   description = "private app subnet az2 cidr block"
+   type        = string
+ }
 
-# variable "private_data_subnet_az2_cidr" {
-#   description = "private data subnet az2 cidr block"
-#   type        = string
-# }
+ variable "private_data_subnet_az1_cidr" {
+   description = "private data subnet az1 cidr block"
+   type        = string
+ }
+
+ variable "private_data_subnet_az2_cidr" {
+   description = "private data subnet az2 cidr block"
+   type        = string
+ }
 
 # # secrets manager variables
 # variable "secrets_manager_secret_name" {
-#   description = "the secrets manager secret name"
+#  description = "the secrets manager secret name"
 #   type        = string
 # }
 
