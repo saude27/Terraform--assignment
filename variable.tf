@@ -51,12 +51,6 @@ variable "environment" {
    type        = string
  }
 
-# ec2 data migration variable
- variable "amazon_linux_ami_id" {
-   description = "amazon linux ami id"
-   type        = string
- }
-
 # # secrets manager variables
 # variable "secrets_manager_secret_name" {
 #   description = "the secrets manager secret name"
@@ -117,10 +111,10 @@ variable "environment" {
  }
 
 # # auto scaling group variables
-# variable "amazon_linux_ami_id" {
-#   description = "default amazon linux ami"
-#   type        = string
-# }
+ variable "amazon_linux_ami_id" {
+   description = "default amazon linux ami"
+   type        = string
+ }
 
  variable "ec2_instance_type" {
    description = "ec2 instance type"
@@ -128,7 +122,7 @@ variable "environment" {
  }
 
 # # route-53 variables
-# variable "record_name" {
-#   description = "sub domain name"
-#   type        = string
-# }
+ variable "record_name" {
+   description = "sub domain name"
+   type        = string
+ }

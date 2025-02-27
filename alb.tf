@@ -13,9 +13,9 @@ resource "aws_lb" "application_load_balancer" {
 }
 
 # create target group
-resource "aws_lb_target_group" "alb_target_group" {
-  name        = "${var.project_name}-${var.environment}-tg"
-  target_type = "ip"
+resource "aws_lb_target_group""nest_dev_tg_v2" {
+  name        = "${var.project_name}-${var.environment}-tg-v2"
+  target_type = "instance"
   port        = 80
   protocol    = "HTTP"
   vpc_id      = aws_vpc.vpc.id
@@ -59,6 +59,6 @@ resource "aws_lb_listener" "alb_https_listener" {
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.alb_target_group.arn
+    target_group_arn = aws_lb_target_group.nest_dev_tg_v2.arn
   }
 }
