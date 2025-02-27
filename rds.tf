@@ -1,11 +1,11 @@
 # create database subnet group
 resource "aws_db_subnet_group" "database_subnet_group" {
-  name        = "${var.project_name}-${var.environment}-database-subnet"
+  name        = "${var.project_name}-${var.environment}-database-subnets"
   subnet_ids  = [aws_subnet.private_data_subnet_az1.id, aws_subnet.private_data_subnet_az2.id]
   description = "subnets for database instance"
 
   tags = {
-    Name = "${var.project_name}-${var.environment}-database-subnet"
+    Name = "${var.project_name}-${var.environment}-database-subnets"
   }
 }
 
@@ -15,14 +15,14 @@ resource "aws_db_instance" "database_instance" {
   engine_version         = "8.4.4"
   multi_az               = var.multi_az_deployment
   identifier             = var.database_instance_identifier
-  username               = "saudat"
-  password               = "hakeembada"
-  db_name                = "applicationdb"
+  username               = var.RDS_DB_USERNAME
+  password               = var.RDS_DB_PASSWORD
+  db_name                = var.RDS_DB_NAME
   instance_class         = var.database_instance_class
   allocated_storage      = 200
   db_subnet_group_name   = aws_db_subnet_group.database_subnet_group.name
   vpc_security_group_ids = [aws_security_group.database_security_group.id]
-  availability_zone      = data.aws_availability_zones.available_zones.names[1]
+  availability_zone      = data.aws_availability_zones.available_zones.names[0]
   skip_final_snapshot    = true
   publicly_accessible    = var.publicly_accessible
 }

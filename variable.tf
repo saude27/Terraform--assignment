@@ -51,13 +51,19 @@ variable "environment" {
    type        = string
  }
 
+# ec2 data migration variable
+ variable "amazon_linux_ami_id" {
+   description = "amazon linux ami id"
+   type        = string
+ }
+
 # # secrets manager variables
 # variable "secrets_manager_secret_name" {
-#  description = "the secrets manager secret name"
+#   description = "the secrets manager secret name"
 #   type        = string
 # }
 
-#  rds variables
+# # rds variables
  variable "multi_az_deployment" {
    description = "create a standby db instance"
    type        = bool
@@ -65,6 +71,21 @@ variable "environment" {
 
  variable "database_instance_identifier" {
    description = "database instance identifier"
+   type        = string
+ }
+
+ variable "RDS_DB_NAME" {
+   description = "database name"
+   type        = string
+ }
+
+ variable "RDS_DB_USERNAME" {
+   description = "database username"
+   type        = string
+ }
+
+ variable "RDS_DB_PASSWORD" {
+   description = "database password"
    type        = string
  }
 
@@ -79,15 +100,15 @@ variable "environment" {
  }
 
 # # acm variables
-# variable "domain_name" {
-#   description = "domain name"
-#   type        = string
-# }
+ variable "domain_name" {
+   description = "domain name"
+   type        = string
+ }
 
-# variable "alternative_names" {
-#   description = "sub domain name"
-#   type        = string
-# }
+ variable "alternative_names" {
+   description = "sub domain name"
+   type        = string
+ }
 
 # # sns topic variables
 # variable "operator_email" {
@@ -101,10 +122,10 @@ variable "environment" {
 #   type        = string
 # }
 
-# variable "ec2_instance_type" {
-#   description = "ec2 instance type"
-#   type        = string
-# }
+ variable "ec2_instance_type" {
+   description = "ec2 instance type"
+   type        = string
+ }
 
 # # route-53 variables
 # variable "record_name" {
