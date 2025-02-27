@@ -111,10 +111,10 @@ variable "environment" {
  }
 
 # # sns topic variables
-# variable "operator_email" {
-#   description = "a valid email address"
-#   type        = string
-# }
+ variable "operator_email" {
+   description = "a valid email address"
+   type        = string
+ }
 
 # # auto scaling group variables
 # variable "amazon_linux_ami_id" {
