@@ -68,17 +68,17 @@ variable "environment" {
    type        = string
  }
 
- variable "RDS_DB_NAME" {
+ variable "rds_db_name" {
    description = "database name"
    type        = string
  }
 
- variable "RDS_DB_USERNAME" {
+ variable "rds_db_username" {
    description = "database username"
    type        = string
  }
 
- variable "RDS_DB_PASSWORD" {
+ variable "rds_db_password" {
    description = "database password"
    type        = string
  }

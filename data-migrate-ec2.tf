@@ -7,9 +7,9 @@ resource "aws_instance" "data_migrate_ec2" {
 
   user_data = base64encode(templatefile("${path.module}/migrate-sql.sh.tpl", {
     RDS_ENDPOINT        = aws_db_instance.database_instance.endpoint
-    RDS_DB_NAME         = var.RDS_DB_NAME
-    RDS_DB_USERNAME     = var.RDS_DB_USERNAME
-    RDS_DB_PASSWORD     = var.RDS_DB_PASSWORD
+    RDS_DB_NAME         = var.rds_db_name
+    RDS_DB_USERNAME     = var.rds_db_username
+    RDS_DB_PASSWORD     = var.rds_db_password
   }))
 
   depends_on = [aws_db_instance.database_instance]

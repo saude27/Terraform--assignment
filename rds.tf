@@ -15,9 +15,9 @@ resource "aws_db_instance" "database_instance" {
   engine_version         = "8.4.4"
   multi_az               = var.multi_az_deployment
   identifier             = var.database_instance_identifier
-  username               = var.RDS_DB_USERNAME
-  password               = var.RDS_DB_PASSWORD
-  db_name                = var.RDS_DB_NAME
+  username               = var.rds_db_username
+  password               = var.rds_db_password
+  db_name                = var.rds_db_name
   instance_class         = var.database_instance_class
   allocated_storage      = 200
   db_subnet_group_name   = aws_db_subnet_group.database_subnet_group.name

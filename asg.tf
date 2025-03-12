@@ -20,9 +20,9 @@ resource "aws_launch_template" "app_server_launch_template" {
     RECORD_NAME         = var.record_name
     DOMAIN_NAME         = var.domain_name
     RDS_ENDPOINT        = aws_db_instance.database_instance.endpoint
-    RDS_DB_NAME         = var.RDS_DB_NAME 
-    RDS_DB_USERNAME     = var.RDS_DB_USERNAME 
-    RDS_DB_PASSWORD     = var.RDS_DB_PASSWORD
+    RDS_DB_NAME         = var.rds_db_name 
+    RDS_DB_USERNAME     = var.rds_db_username 
+    RDS_DB_PASSWORD     = var.rds_db_password
   }))
 }
 
